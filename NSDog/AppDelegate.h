@@ -2,9 +2,8 @@
 //  AppDelegate.h
 //  NSDog
 //
-//  Created by Christopher Larsen on 2013-03-12.
-//  Copyright (c) 2013 DeadRatGames. All rights reserved.
-//
+//  Created by Christopher Larsen, Brian Croom on 2013-03-12.
+//  Copyright (c) 2013 All rights reserved
 
 #import <UIKit/UIKit.h>
 
@@ -12,8 +11,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (strong, nonatomic) IBOutlet ViewController *viewController;
 
 @end

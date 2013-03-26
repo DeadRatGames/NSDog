@@ -2,10 +2,12 @@
 //  ViewController.m
 //  NSDog
 //
-//  Created by Christopher Larsen on 2013-03-12.
-//  Copyright (c) 2013 DeadRatGames. All rights reserved.
+//  Created by Christopher Larsen, Brian Croom on 2013-03-12.
+//  Copyright (c) 2013 All rights reserved
+
 
 #import "ViewController.h"
+#import <objc/runtime.h>
 
 #import "Kitten.h"
 #import "NSDog.h"
@@ -16,43 +18,95 @@
 
 @end
 
+
+
+
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _imageViewGrumpyCat.alpha = 0;
+    self.badKitty = [[Kitten alloc] init];
     
-    _badKitty = [[Kitten alloc] init];
-
     
+    /* Test a basic Dog just to observe dealloc */
     NSDog(_badKitty, nil);
     
     
-    // Two more Dog's you can try
-    // [Dog watchDogForObject: _badKitty keypath: @"claws" relayObservedChangesTo: self];
-    // [Dog guardDogForObject: _badKitty keypath: @"paws" lowerLimit: 1 upperLimit: 2];
     
+    /* Test a basic Dog */
+    NSDog(_badKitty, @"floatKitty");
+    
+    
+    
+    /* Test Watchdog that just relays KVO observations to some other object */
+    [Dog watchDogForObject: _badKitty keypath: @"claws" relayObservedChangesTo: self];
+    
+    
+    
+    /* Test Guard Dog makes sure a variable stays within limits you set */
+    [Dog guardDogForObject: _badKitty keypath: @"grumpiness" lowerLimit: -1.0 upperLimit: 0];
+    
+    
+    
+    /* Test Callback Dog that performs a selctor whenever the keypath changes */
+    [_badKitty addObserver:self forKeyPath:@"behavingBadly" callback:@selector(callbackCheckKitty)];
+    
+    
+    
+    /* Test Block Dog that executes a block whenever the keypath changes */
+    __weak typeof(self) weakSelf = self;
+    [_badKitty addObserver: weakSelf forKeyPath:@"name" block:^{
+       NSLog(@"Bad kitty has a name: %@", weakSelf.badKitty.name);
+    }];
+
+    
+    
+    /* Test the concrete types */
+    NSDog(_badKitty, @"rectKitty");
+    NSDog(_badKitty, @"pointKitty");
+    NSDog(_badKitty, @"sizeKitty");
+    NSDog(_badKitty, @"numberGrumpiness");
+    NSDog(_badKitty, @"valueGrumpiness");
+
 }
 
+// The standard KVO Override
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
     
-    NSLog(@"ViewController has observed a change for %@!", [object class]);
+    NSLog(@"ViewController has observed a change for %@ %@ %@", [object class], keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
+}
+
+- (void)callbackCheckKitty
+{
+    NSLog(@"Kitty is %@", _badKitty.behavingBadly ? @"behaving badly." : @"being good." );
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    _badKitty.paws = 2;
-    _badKitty.paws = 3;
-    _badKitty.claws = nil;
+    // OK Kitty, go do stuff!
+    
     _badKitty.behavingBadly = YES;
+    _badKitty.name          = @"Grumpy Cat";
+    _badKitty.claws         = [[NSObject alloc] init];
+    _badKitty.claws         = nil;
+    _badKitty.floatKitty    = 1.0;
+    _badKitty.grumpiness    = -1.0;
+    _badKitty.grumpiness    =  1.0;
+    _badKitty.rectKitty     = CGRectZero;
+    _badKitty.sizeKitty     = CGSizeZero;
+    _badKitty.pointKitty       = CGPointZero;
+    _badKitty.numberGrumpiness = [NSNumber numberWithInt:4];
+    _badKitty.numberGrumpiness = [NSNumber numberWithFloat: 0.5];
+    _badKitty.valueGrumpiness  = [NSValue valueWithCGRect:CGRectZero];
+    _badKitty.valueGrumpiness  = [NSValue valueWithCGSize:CGSizeZero];
 
 }
 
@@ -62,8 +116,8 @@
     
     _badKitty = nil; // Oh no!
 
-    // If we didn't crash by this point ... success!
-    //[UIView animateWithDuration: 3.0 animations:^{ _imageViewGrumpyCat.alpha = 1.0; }];
+    // If we haven't crashed by this point ... SUCCESS!
+    [UIView animateWithDuration: 4.0 animations:^{ self.imageViewGrumpyCat.alpha = 1.0; }];
 }
 
 @end
