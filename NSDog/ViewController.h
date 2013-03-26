@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) IBOutlet UIImageView* imageViewGrumpyCat;
+
 @end
