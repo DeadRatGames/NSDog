@@ -6,17 +6,24 @@
 //  Copyright (c) 2013 All rights reserved
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
 
-#import "ViewController.h"
+@interface AppDelegate ()
+
+@property (nonatomic) RootViewController *rootViewController;
+
+@end
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.rootViewController = [[RootViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

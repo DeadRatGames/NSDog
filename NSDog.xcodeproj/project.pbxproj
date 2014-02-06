@@ -11,9 +11,7 @@
 		579A483216F2C86000C2259A /* NSDog Running@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579A482E16F2C86000C2259A /* NSDog Running@2x.png */; };
 		579A483316F2C86000C2259A /* NSDog Success.png in Resources */ = {isa = PBXBuildFile; fileRef = 579A482F16F2C86000C2259A /* NSDog Success.png */; };
 		579A483416F2C86000C2259A /* NSDog Success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579A483016F2C86000C2259A /* NSDog Success@2x.png */; };
-		579A483A16F2E20800C2259A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 579A483916F2E20800C2259A /* Icon.png */; };
-		579A483C16F2E20C00C2259A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579A483B16F2E20C00C2259A /* Icon@2x.png */; };
-		579A484016F2E68400C2259A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579A483F16F2E68400C2259A /* ViewController.xib */; };
+		579A484016F2E68400C2259A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579A483F16F2E68400C2259A /* RootViewController.xib */; };
 		57DA6A4316F00521007C2055 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DA6A4216F00521007C2055 /* UIKit.framework */; };
 		57DA6A4516F00521007C2055 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DA6A4416F00521007C2055 /* Foundation.framework */; };
 		57DA6A4716F00521007C2055 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DA6A4616F00521007C2055 /* CoreGraphics.framework */; };
@@ -23,9 +21,11 @@
 		57DA6A5516F00521007C2055 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DA6A5416F00521007C2055 /* Default.png */; };
 		57DA6A5716F00521007C2055 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DA6A5616F00521007C2055 /* Default@2x.png */; };
 		57DA6A5916F00521007C2055 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DA6A5816F00521007C2055 /* Default-568h@2x.png */; };
-		57DA6A5C16F00521007C2055 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DA6A5B16F00521007C2055 /* ViewController.m */; };
+		57DA6A5C16F00521007C2055 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DA6A5B16F00521007C2055 /* RootViewController.m */; };
 		57DA6A7816F00598007C2055 /* NSDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DA6A7716F00598007C2055 /* NSDog.m */; };
 		57DA6A7B16F007ED007C2055 /* Kitten.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DA6A7A16F007ED007C2055 /* Kitten.m */; };
+		57DB5C8D18A30E1C00AF6ACF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DB5C8B18A30E1C00AF6ACF /* Icon.png */; };
+		57DB5C8E18A30E1C00AF6ACF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DB5C8C18A30E1C00AF6ACF /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,7 @@
 		579A482E16F2C86000C2259A /* NSDog Running@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NSDog Running@2x.png"; path = "Resources/NSDog Running@2x.png"; sourceTree = "<group>"; };
 		579A482F16F2C86000C2259A /* NSDog Success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NSDog Success.png"; path = "Resources/NSDog Success.png"; sourceTree = "<group>"; };
 		579A483016F2C86000C2259A /* NSDog Success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NSDog Success@2x.png"; path = "Resources/NSDog Success@2x.png"; sourceTree = "<group>"; };
-		579A483916F2E20800C2259A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		579A483B16F2E20C00C2259A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
-		579A483F16F2E68400C2259A /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		579A483F16F2E68400C2259A /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		57DA6A3F16F00521007C2055 /* NSDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DA6A4216F00521007C2055 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57DA6A4416F00521007C2055 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,12 +47,14 @@
 		57DA6A5416F00521007C2055 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		57DA6A5616F00521007C2055 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		57DA6A5816F00521007C2055 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		57DA6A5A16F00521007C2055 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		57DA6A5B16F00521007C2055 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		57DA6A5A16F00521007C2055 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		57DA6A5B16F00521007C2055 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		57DA6A7616F00598007C2055 /* NSDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDog.h; sourceTree = "<group>"; };
 		57DA6A7716F00598007C2055 /* NSDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDog.m; sourceTree = "<group>"; };
 		57DA6A7916F007ED007C2055 /* Kitten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kitten.h; sourceTree = "<group>"; };
 		57DA6A7A16F007ED007C2055 /* Kitten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kitten.m; sourceTree = "<group>"; };
+		57DB5C8B18A30E1C00AF6ACF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		57DB5C8C18A30E1C00AF6ACF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +74,8 @@
 		579A482C16F2C7E500C2259A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				579A483B16F2E20C00C2259A /* Icon@2x.png */,
-				579A483916F2E20800C2259A /* Icon.png */,
+				57DB5C8B18A30E1C00AF6ACF /* Icon.png */,
+				57DB5C8C18A30E1C00AF6ACF /* Icon@2x.png */,
 				579A482D16F2C86000C2259A /* NSDog Running.png */,
 				579A482E16F2C86000C2259A /* NSDog Running@2x.png */,
 				579A482F16F2C86000C2259A /* NSDog Success.png */,
@@ -116,13 +116,13 @@
 			children = (
 				57DA6A5116F00521007C2055 /* AppDelegate.h */,
 				57DA6A5216F00521007C2055 /* AppDelegate.m */,
-				57DA6A5A16F00521007C2055 /* ViewController.h */,
-				57DA6A5B16F00521007C2055 /* ViewController.m */,
+				57DA6A5A16F00521007C2055 /* RootViewController.h */,
+				57DA6A5B16F00521007C2055 /* RootViewController.m */,
 				57DA6A7616F00598007C2055 /* NSDog.h */,
 				57DA6A7716F00598007C2055 /* NSDog.m */,
 				57DA6A7916F007ED007C2055 /* Kitten.h */,
 				57DA6A7A16F007ED007C2055 /* Kitten.m */,
-				579A483F16F2E68400C2259A /* ViewController.xib */,
+				579A483F16F2E68400C2259A /* RootViewController.xib */,
 				579A482C16F2C7E500C2259A /* Resources */,
 				57DA6A4916F00521007C2055 /* Supporting Files */,
 			);
@@ -196,15 +196,15 @@
 			files = (
 				57DA6A4D16F00521007C2055 /* InfoPlist.strings in Resources */,
 				57DA6A5516F00521007C2055 /* Default.png in Resources */,
+				57DB5C8D18A30E1C00AF6ACF /* Icon.png in Resources */,
 				57DA6A5716F00521007C2055 /* Default@2x.png in Resources */,
 				57DA6A5916F00521007C2055 /* Default-568h@2x.png in Resources */,
+				57DB5C8E18A30E1C00AF6ACF /* Icon@2x.png in Resources */,
 				579A483116F2C86000C2259A /* NSDog Running.png in Resources */,
 				579A483216F2C86000C2259A /* NSDog Running@2x.png in Resources */,
 				579A483316F2C86000C2259A /* NSDog Success.png in Resources */,
 				579A483416F2C86000C2259A /* NSDog Success@2x.png in Resources */,
-				579A483A16F2E20800C2259A /* Icon.png in Resources */,
-				579A483C16F2E20C00C2259A /* Icon@2x.png in Resources */,
-				579A484016F2E68400C2259A /* ViewController.xib in Resources */,
+				579A484016F2E68400C2259A /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +217,7 @@
 			files = (
 				57DA6A4F16F00521007C2055 /* main.m in Sources */,
 				57DA6A5316F00521007C2055 /* AppDelegate.m in Sources */,
-				57DA6A5C16F00521007C2055 /* ViewController.m in Sources */,
+				57DA6A5C16F00521007C2055 /* RootViewController.m in Sources */,
 				57DA6A7816F00598007C2055 /* NSDog.m in Sources */,
 				57DA6A7B16F007ED007C2055 /* Kitten.m in Sources */,
 			);
@@ -298,6 +298,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSDog/NSDog-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DISABLE_BARKING_BY_DEFAULT_FOR_THE_DEMO_APP=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "NSDog/NSDog-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

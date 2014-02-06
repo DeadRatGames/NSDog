@@ -5,29 +5,28 @@
 //  Created by Christopher Larsen, Brian Croom on 2013-03-12.
 //  Copyright (c) 2013 All rights reserved
 
-
-#import "ViewController.h"
+#import "RootViewController.h"
 #import <objc/runtime.h>
 
 #import "Kitten.h"
 #import "NSDog.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 
-@property (nonatomic, strong) Kitten* badKitty;
+@property (nonatomic) Kitten* badKitty;
 
 @end
 
 
-
-
-@implementation ViewController
+@implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    /* A basic kitty object to do some testing with */
     self.badKitty = [[Kitten alloc] init];
+    
     
     
     /* Test a basic Dog just to observe dealloc */
@@ -37,22 +36,22 @@
     
     /* Test a basic Dog */
     NSDog(_badKitty, @"floatKitty");
-    
+   
     
     
     /* Test Watchdog that just relays KVO observations to some other object */
     [Dog watchDogForObject: _badKitty keypath: @"claws" relayObservedChangesTo: self];
-    
+   
     
     
     /* Test Guard Dog makes sure a variable stays within limits you set */
     [Dog guardDogForObject: _badKitty keypath: @"grumpiness" lowerLimit: -1.0 upperLimit: 0];
-    
+   
     
     
     /* Test Callback Dog that performs a selctor whenever the keypath changes */
     [_badKitty addObserver:self forKeyPath:@"behavingBadly" callback:@selector(callbackCheckKitty)];
-    
+   
     
     
     /* Test Block Dog that executes a block whenever the keypath changes */
@@ -60,7 +59,6 @@
     [_badKitty addObserver: weakSelf forKeyPath:@"name" block:^{
        NSLog(@"Bad kitty has a name: %@", weakSelf.badKitty.name);
     }];
-
     
     
     /* Test the concrete types */
@@ -91,17 +89,17 @@
 {
     [super viewWillAppear:animated];
     
-    // OK Kitty, go do stuff!
+    // OK Kitty, go do bad stuff!
     
-    _badKitty.behavingBadly = YES;
-    _badKitty.name          = @"Grumpy Cat";
-    _badKitty.claws         = [[NSObject alloc] init];
-    _badKitty.claws         = nil;
-    _badKitty.floatKitty    = 1.0;
-    _badKitty.grumpiness    = -1.0;
-    _badKitty.grumpiness    =  1.0;
-    _badKitty.rectKitty     = CGRectZero;
-    _badKitty.sizeKitty     = CGSizeZero;
+    _badKitty.behavingBadly    = YES;
+    _badKitty.name             = @"Grumpy Cat";
+    _badKitty.claws            = [[NSObject alloc] init];
+    _badKitty.claws            = nil;
+    _badKitty.floatKitty       = 1.0;
+    _badKitty.grumpiness       = -1.0;
+    _badKitty.grumpiness       =  1.0;
+    _badKitty.rectKitty        = CGRectZero;
+    _badKitty.sizeKitty        = CGSizeZero;
     _badKitty.pointKitty       = CGPointZero;
     _badKitty.numberGrumpiness = [NSNumber numberWithInt:4];
     _badKitty.numberGrumpiness = [NSNumber numberWithFloat: 0.5];
@@ -116,8 +114,11 @@
     
     _badKitty = nil; // Oh no!
 
-    // If we haven't crashed by this point ... SUCCESS!
-    [UIView animateWithDuration: 4.0 animations:^{ self.imageViewGrumpyCat.alpha = 1.0; }];
+    NSLog(@"If we haven't crashed by this point ... SUCCESS!");
+    
+    [UIView animateWithDuration: 4.0 animations:^{
+        self.imageViewGrumpyCat.alpha = 1.0;
+    }];
 }
 
 @end
